@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.scss";
+import { HashLink } from "react-router-hash-link";
+
 import introvideo from "../../assets/videos/bgvid.mp4";
 import services_1a from "../../assets/icons/1a.jpg";
 import services_2a from "../../assets/icons/2a.jpg";
@@ -23,87 +25,214 @@ import locations_phanthiet from "../../assets/images/phanthiet.jpeg";
 import locations_hcm from "../../assets/images/hcm.jpeg";
 import locations_vungtau from "../../assets/images/vungtau.jpeg";
 
-const locations_data = [
+const location_data = [
   {
     id: 1,
-    link: '/locations#hanoi',
+    link: "/locations#hanoi",
     img: locations_hanoi,
-    country: 'Viet Nam',
-    capital: 'Ha Noi',
+    country: "Viet Nam",
+    capital: "Ha Noi",
   },
   {
     id: 2,
-    link: '/locations#halong',
+    link: "/locations#halong",
     img: locations_halong,
-    country: 'Viet Nam',
-    capital: 'Ha Long',
+    country: "Viet Nam",
+    capital: "Ha Long",
   },
   {
     id: 3,
-    link: '/locations#haiphong',
+    link: "/locations#haiphong",
     img: locations_haiphong,
-    country: 'Viet Nam',
-    capital: 'Hai Phong',
+    country: "Viet Nam",
+    capital: "Hai Phong",
   },
   {
     id: 4,
-    link: '/locations#hue',
+    link: "/locations#hue",
     img: locations_hue,
-    country: 'Viet Nam',
-    capital: 'Hue',
+    country: "Viet Nam",
+    capital: "Hue",
   },
   {
     id: 5,
-    link: '/locations#danang',
+    link: "/locations#danang",
     img: locations_danang,
-    country: 'Viet Nam',
-    capital: 'Da Nang',
+    country: "Viet Nam",
+    capital: "Da Nang",
   },
   {
     id: 6,
-    link: '/locations#hoian',
+    link: "/locations#hoian",
     img: locations_hoian,
-    country: 'Viet Nam',
-    capital: 'Hoi An',
+    country: "Viet Nam",
+    capital: "Hoi An",
   },
 
   {
     id: 7,
-    link: '/locations#nhatrang',
+    link: "/locations#nhatrang",
     img: locations_nhatrang,
-    country: 'Viet Nam',
-    capital: 'Nha Trang',
+    country: "Viet Nam",
+    capital: "Nha Trang",
   },
   {
     id: 8,
-    link: '/locations#dalat',
+    link: "/locations#dalat",
     img: locations_dalat,
-    country: 'Viet Nam',
-    capital: 'Da Lat',
+    country: "Viet Nam",
+    capital: "Da Lat",
   },
   {
     id: 9,
-    link: '/locations#phanthiet',
+    link: "/locations#phanthiet",
     img: locations_phanthiet,
-    country: 'Viet Nam',
-    capital: 'Phan Thiet',
+    country: "Viet Nam",
+    capital: "Phan Thiet",
   },
   {
     id: 10,
-    link: '/locations#hochiminh',
+    link: "/locations#hochiminh",
     img: locations_hcm,
-    country: 'Viet Nam',
-    capital: 'Ho Chi Minh',
+    country: "Viet Nam",
+    capital: "Ho Chi Minh",
   },
   {
     id: 11,
-    link: '/locations#vungtau',
+    link: "/locations#vungtau",
     img: locations_vungtau,
-    country: 'Viet Nam',
-    capital: 'Vung Tau',
+    country: "Viet Nam",
+    capital: "Vung Tau",
   },
+];
 
-]
+const package_data = [
+  {
+    id: 1,
+    img: packages_p1,
+    price: "$99.99/-",
+    rank: "Bronze",
+    details: [
+      {
+        id: 1,
+        text: "2 Star Hotel",
+      },
+      {
+        id: 2,
+        text: "5 Nights Stay",
+      },
+      {
+        id: 3,
+        text: "Free photo Session",
+      },
+      {
+        id: 4,
+        text: "Friendly Tour Guide",
+      },
+      {
+        id: 5,
+        text: "24/7 Customer Help Center",
+      },
+    ],
+  },
+  {
+    id: 2,
+    img: packages_p2,
+    price: "$199.99/-",
+    rank: "Silver",
+    details: [
+      {
+        id: 1,
+        text: "3 Star Hotel",
+      },
+      {
+        id: 2,
+        text: "7 Nights Stay",
+      },
+      {
+        id: 3,
+        text: "Free photo Session",
+      },
+      {
+        id: 4,
+        text: "Friendly Tour Guide",
+      },
+      {
+        id: 5,
+        text: "24/7 Customer Help Center",
+      },
+    ],
+  },
+  {
+    id: 3,
+    img: packages_p3,
+    price: "$299.99/-",
+    rank: "Gold",
+    details: [
+      {
+        id: 1,
+        text: "4 Star Hotel",
+      },
+      {
+        id: 2,
+        text: "10 Nights Stay",
+      },
+      {
+        id: 3,
+        text: "Free photo Session",
+      },
+      {
+        id: 4,
+        text: "Friendly Tour Guide",
+      },
+      {
+        id: 5,
+        text: "24/7 Customer Help Center",
+      },
+      {
+        id: 6,
+        text: "Breakfast and Dinner",
+      },
+    ],
+  },
+  {
+    id: 4,
+    img: packages_p4,
+    price: "$399.99/-",
+    rank: "Platinum",
+    details: [
+      {
+        id: 1,
+        text: "5 Star Hotel",
+      },
+      {
+        id: 2,
+        text: "14 Nights Stay",
+      },
+      {
+        id: 3,
+        text: "Free photo Session",
+      },
+      {
+        id: 4,
+        text: "Friendly Tour Guide",
+      },
+      {
+        id: 5,
+        text: "24/7 Customer Help Center",
+      },
+      {
+        id: 6,
+        text: "Breakfast, Lunch and Dinner",
+      },
+      {
+        id: 7,
+        text: "Bornfire",
+      },
+    ],
+  },
+];
+
 const Home = () => {
   return (
     <div className="Home_wrapper">
@@ -117,7 +246,14 @@ const Home = () => {
         >
           <source src={introvideo} type="video/mp4" />
         </video> */}
-        <video src={introvideo} type="video/mp4" autoplay muted loop></video>
+        <video
+          loop
+          muted
+          autoplay
+          playsinline
+          src={introvideo}
+         
+        />
         <div className="content" id="home">
           <div className="title">
             <h1>TRAVEL AFFILIATE</h1>
@@ -138,6 +274,7 @@ const Home = () => {
           <h2>We have the best services available for you!</h2>
         </div>
         <div className="rowitems">
+          
           <div className="container-box">
             <div className="container-image">
               <img src={services_1a} alt="Flight Services" />
@@ -178,82 +315,16 @@ const Home = () => {
           <h2>Locations</h2>
         </div>
 
-        
-
         <div className="location-content">
-          {locations_data.map((item, index) => (
-            <a key={item.id} href={item.link} target="_blank" rel="noreferrer">
-            <div className="col-content">
-              <img src={item.img} alt={item.capital} />
-              <h5>{item.country}</h5>
-              <p>{item.capital}</p>
-            </div>
-          </a>
+          {location_data.map((item, index) => (
+            <HashLink key={index} to={item.link}>
+              <div className="col-content">
+                <img src={item.img} alt={item.capital} />
+                <h5>{item.country}</h5>
+                <p>{item.capital}</p>
+              </div>
+            </HashLink>
           ))}
-
-          {/* <a href="/locations#kashmir" target="_blank">
-            <div className="col-content">
-              <img src={locations_l1} alt="" />
-              <h5>India</h5>
-              <p>Kashmir</p>
-            </div>
-          </a>
-
-          <a href="./locations#istanbul" target="_blank">
-            <div className="col-content">
-              <img src={locations_l2} alt="" />
-              <h5>Turkey</h5>
-              <p>Istanbul</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#paris" target="_blank">
-            <div className="col-content">
-              <img src={locations_l3} alt="" />
-              <h5>France</h5>
-              <p>Paris</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#bali" target="_blank">
-            <div className="col-content">
-              <img src={locations_l4} alt="" />
-              <h5>Indonesia</h5>
-              <p>Bali</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#dubai" target="_blank">
-            <div className="col-content">
-              <img src={locations_l5} alt="" />
-              <h5>United Arab Emirates</h5>
-              <p>Dubai</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#geneva" target="_blank">
-            <div className="col-content">
-              <img src={locations_l6} alt="" />
-              <h5>Switzerland</h5>
-              <p>Geneva</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#port-blair" target="_blank">
-            <div className="col-content">
-              <img src={locations_l7} alt="" />
-              <h5>Andaman & Nicobar</h5>
-              <p>Port Blair</p>
-            </div>
-          </a>
-
-          <a href="./locations.html#rome" target="_blank">
-            <div className="col-content">
-              <img src={locations_l8} alt="" />
-              <h5>Italy</h5>
-              <p>Rome</p>
-            </div>
-          </a> */}
         </div>
       </section>
 
@@ -264,88 +335,25 @@ const Home = () => {
         </div>
 
         <div className="package-content">
-          <div className="box">
-            <div className="image">
-              <img src={packages_p1} alt="" />
-              <h3>Rs.9,999/-</h3>
-            </div>
+          {package_data.map((item, index) => (
+            <div key={index} className="box">
+              <div className="image">
+                <img src={item.img} alt="" />
+                <h3>{item.price}</h3>
+              </div>
 
-            <div className="dest-content">
-              <div className="location">
-                <h4>Bronze</h4>
-                <ul className="pac-details">
-                  <li>2 Star Hotel</li>
-                  <li>5 Nights Stay</li>
-                  <li>Free photo Session</li>
-                  <li>Friendly Tour Guide</li>
-                  <li>24/7 Customer Help Center</li>
-                </ul>
+              <div className="dest-content">
+                <div className="location">
+                  <h4>{item.rank}</h4>
+                  <ul className="pac-details">
+                    {item.details.map((detail, index) => (
+                      <li key={index}>{detail.text}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="box">
-            <div className="image">
-              <img src={packages_p2} alt="" />
-              <h3>Rs.19,999/-</h3>
-            </div>
-
-            <div className="dest-content">
-              <div className="location">
-                <h4>Silver</h4>
-                <ul className="pac-details">
-                  <li>3 Star Hotel</li>
-                  <li>7 Nights Stay</li>
-                  <li>Free photo Session</li>
-                  <li>Friendly Tour Guide</li>
-                  <li>24/7 Customer Help Center</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="image">
-              <img src={packages_p3} alt="" />
-              <h3>Rs.29,999/-</h3>
-            </div>
-
-            <div className="dest-content">
-              <div className="location">
-                <h4>Gold</h4>
-                <ul className="pac-details">
-                  <li>4 Star Hotel</li>
-                  <li>10 Nights Stay</li>
-                  <li>Breakfast and Dinner</li>
-                  <li>Free photo Session</li>
-                  <li>Friendly Tour Guide</li>
-                  <li>24/7 Customer Help Center</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="box">
-            <div className="image">
-              <img src={packages_p4} alt="" />
-              <h3>Rs.39,999/-</h3>
-            </div>
-
-            <div className="dest-content">
-              <div className="location">
-                <h4>Platinum</h4>
-                <ul className="pac-details">
-                  <li>5 Star Hotel</li>
-                  <li>14 Nights Stay</li>
-                  <li>Breakfast, Lunch and Dinner</li>
-                  <li>Bornfire</li>
-                  <li>Free photo Session</li>
-                  <li>Friendly Tour Guide</li>
-                  <li>24/7 Customer Help Center</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

@@ -61,3 +61,17 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .Contact_wrapper {
+    .contact {
+      padding: 110px 10%;
+      .contact-form {
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

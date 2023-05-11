@@ -109,21 +109,21 @@ const Locations = () => {
           <div key={index} className="location-detail" id={item.id_ref}>
             <h1>{item.capital}</h1>
             <div className="stars">
-              <a href="#">
+              <div>
                 <i className="bx bxs-star"></i>
-              </a>
-              <a href="#">
+              </div>
+              <div>
                 <i className="bx bxs-star"></i>
-              </a>
-              <a href="#">
+              </div>
+              <div>
                 <i className="bx bxs-star"></i>
-              </a>
-              <a href="#">
+              </div>
+              <div>
                 <i className="bx bxs-star"></i>
-              </a>
-              <a href="#">
+              </div>
+              <div>
                 <i className="bx bxs-star"></i>
-              </a>
+              </div>
             </div>
             <p>{item.text}</p>
             <div className="location-img">

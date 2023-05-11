@@ -21,10 +21,16 @@
     }
 
     .location-detail {
+      padding-top: 60px;
+
       h1 {
         padding-top: 60px;
         color: #fc0050;
         font-size: 40px;
+      }
+
+      .stars {
+        display: inline-flex;
       }
 
       .stars i {
